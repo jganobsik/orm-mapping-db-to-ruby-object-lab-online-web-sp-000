@@ -29,7 +29,7 @@ class Student
   def Student.find_by_name(name)
     # find the student in the database given a name
     # return a new instance of the Student class
-    new_student = nil 
+
     sql = <<-SQL
       SELECT *
       FROM students
@@ -40,7 +40,7 @@ class Student
     DB[:conn].execute(sql, name).map do |row|
       new_student = self.new_from_db(row)
     end.first
-      new_student
+      
    end
  
   end
