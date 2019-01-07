@@ -40,8 +40,9 @@ class Student
     DB[:conn].execute(sql, name).map do |row|
       new_student = self.new_from_db(row)
     end.first
+      new_student
    end
-   new_student
+ 
   end
   
   def save
