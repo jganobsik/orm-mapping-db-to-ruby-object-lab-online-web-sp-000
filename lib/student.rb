@@ -39,6 +39,7 @@ class Student
     DB[:conn].execute(sql,name).map do |row|
       self.new_from_db(row)
     end.first
+    
   end
   
   def save
@@ -66,5 +67,6 @@ class Student
     sql = "DROP TABLE IF EXISTS students"
     DB[:conn].execute(sql)
   end
+  
 end
-end
+
