@@ -19,12 +19,12 @@ class Student
       SELECT *
       FROM students
     SQL
-  DB[:conn].execute(sql).map do |row|
+   DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
-    end.first
-   end 
-
+    end
   end
+
+  
 
   def Student.find_by_name(name)
     # find the student in the database given a name
