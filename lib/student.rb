@@ -38,6 +38,7 @@ class Student
       new_student = self.new_from_db(row)
     end.first
    end 
+   new_student
   end
   
   def save
